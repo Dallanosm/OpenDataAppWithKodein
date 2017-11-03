@@ -2,6 +2,8 @@ package com.nosmurf.monumentsapp.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.github.salomonbrys.kodein.LazyKodein
+import com.github.salomonbrys.kodein.android.appKodein
 import com.nosmurf.monumentsapp.presenter.Presenter
 
 abstract class RootActivity<V : Presenter.View> : AppCompatActivity(), Presenter.View {
@@ -9,16 +11,15 @@ abstract class RootActivity<V : Presenter.View> : AppCompatActivity(), Presenter
     protected abstract val layoutResourceId: Int
     protected abstract val presenter: Presenter<V>
 
+    val kodein = LazyKodein(appKodein)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(layoutResourceId)
 
-        initializeInjector()
         initializeUI()
         initializePresenter()
     }
-
-    protected abstract fun initializeInjector()
 
     protected abstract fun initializeUI()
 

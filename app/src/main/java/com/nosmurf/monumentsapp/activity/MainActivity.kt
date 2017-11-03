@@ -1,20 +1,16 @@
 package com.nosmurf.monumentsapp.activity
 
 import android.util.Log
+import com.github.salomonbrys.kodein.instance
 import com.nosmurf.monumentsapp.R
 import com.nosmurf.monumentsapp.presenter.MainPresenter
-import com.nosmurf.monumentsapp.presenter.Presenter
 
 
 class MainActivity : RootActivity<MainPresenter.View>(), MainPresenter.View {
+
     override val layoutResourceId: Int = R.layout.activity_main
 
-    override val presenter: Presenter<MainPresenter.View>
-        get() = MainPresenter() //TODO: Use Kodein to inject the presenter.
-
-    override fun initializeInjector() {
-        //TODO: Kodein
-    }
+    override val presenter: MainPresenter by kodein.instance()
 
     override fun initializeUI() {
 
