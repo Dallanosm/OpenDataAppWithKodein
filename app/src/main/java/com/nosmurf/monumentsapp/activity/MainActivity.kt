@@ -5,7 +5,7 @@ import com.nosmurf.monumentsapp.presenter.MainPresenter
 import com.nosmurf.monumentsapp.presenter.Presenter
 
 
-class MainActivity : RootActivity<MainPresenter.View>() {
+class MainActivity : RootActivity<MainPresenter.View>(), MainPresenter.View {
 
     override val layoutResourceId: Int = R.layout.activity_main
 
