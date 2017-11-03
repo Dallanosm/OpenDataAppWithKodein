@@ -3,20 +3,22 @@ package com.nosmurf.monumentsapp.presenter
 class MainPresenter : Presenter<MainPresenter.View>() {
 
     override fun initialize() {
-        //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        view?.showTestText("lorem ipsum")
     }
 
     override fun pause() {
-        //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
     override fun stop() {
-        //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
     override fun destroy() {
-        //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
-    interface View : Presenter.View
+    interface View : Presenter.View {
+        fun showTestText(text: String)
+    }
 }
