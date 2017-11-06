@@ -1,4 +1,4 @@
-package com.nosmurf.monumentsapp
+package com.nosmurf.monumentsapp.presentation
 
 import android.app.Application
 import com.github.salomonbrys.kodein.*
