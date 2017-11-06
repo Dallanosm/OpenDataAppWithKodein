@@ -1,8 +1,8 @@
 package com.nosmurf.monumentsapp.activity
 
-import android.util.Log
 import com.github.salomonbrys.kodein.instance
 import com.nosmurf.monumentsapp.R
+import com.nosmurf.monumentsapp.extensions.showToast
 import com.nosmurf.monumentsapp.presenter.MainPresenter
 
 
@@ -21,15 +21,15 @@ class MainActivity : RootActivity<MainPresenter.View>(), MainPresenter.View {
     }
 
     override fun showError(messageId: Int) {
-
+        showToast(messageId)
     }
 
     override fun showError(message: String) {
-
+        showToast(message)
     }
 
     override fun showTestText(text: String) {
-        Log.i("Text", text)
+        showToast(text)
     }
 
 }
