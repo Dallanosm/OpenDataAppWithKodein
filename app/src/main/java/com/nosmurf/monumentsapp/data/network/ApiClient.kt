@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiClient {
 
-    fun <T> createRetrofitService(clazz: Class<T>, endPoint: String): T {
+    fun <S> createService(clazz: Class<S>, endPoint: String): S {
         val logging = HttpLoggingInterceptor()
         logging.level = HttpLoggingInterceptor.Level.BASIC
 
