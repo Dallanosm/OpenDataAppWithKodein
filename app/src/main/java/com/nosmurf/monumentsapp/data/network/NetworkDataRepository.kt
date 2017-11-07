@@ -1,10 +1,10 @@
 package com.nosmurf.monumentsapp.data.network
 
 import com.nosmurf.monumentsapp.data.network.models.MonumentsDto
-import rx.Observable
+import io.reactivex.Flowable
 
-class NetworkDataRepository(private val apiService: OpenDataService = ApiClient.createService(OpenDataService::class.java, OpenDataService.END_POINT)) : NetworkRepository {
+class NetworkDataRepository(private val apiService: OpenDataService) : NetworkRepository {
 
-    override fun getMonuments(): Observable<MonumentsDto> = apiService.getMonuments()
+    override fun getMonuments(): Flowable<MonumentsDto> = apiService.getMonuments()
 
 }

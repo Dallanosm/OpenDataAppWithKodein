@@ -1,10 +1,10 @@
 package com.nosmurf.monumentsapp.data.network
 
 import com.nosmurf.monumentsapp.data.network.models.MonumentsDto
-import rx.Observable
+import io.reactivex.Flowable
 
 interface NetworkRepository {
 
-    fun getMonuments(): Observable<MonumentsDto>
+    fun getMonuments(): Flowable<MonumentsDto>
 
 }

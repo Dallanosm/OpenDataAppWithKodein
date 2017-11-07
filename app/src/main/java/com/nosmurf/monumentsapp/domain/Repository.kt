@@ -1,10 +1,10 @@
 package com.nosmurf.monumentsapp.domain
 
 import com.nosmurf.monumentsapp.domain.models.Monument
-import rx.Observable
+import io.reactivex.Flowable
 
 interface Repository {
 
-    fun getMonuments(): Observable<Monument>
+    fun getMonuments(): Flowable<Monument>
 
 }

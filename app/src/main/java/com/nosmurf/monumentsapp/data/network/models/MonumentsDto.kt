@@ -2,22 +2,22 @@ package com.nosmurf.monumentsapp.data.network.models
 
 
 data class MonumentsDto(
-        val headDto: HeadDto,
-        val resultsDto: ResultsDto
+        val head: HeadDto,
+        val results: ResultsDto
 )
 
 data class ResultsDto(
         val distinct: Boolean, //false
         val ordered: Boolean, //true
-        val monumentDtos: List<MonumentDto>
+        val bindings: List<MonumentDto>
 )
 
 data class MonumentDto(
-        val lngDto: LngDto,
-        val latDto: LatDto,
-        val om_tipoMonumentoDto: OmTipoMonumentoDto,
-        val nameDto: NameDto,
-        val om_tieneEnlaceSIGDto: OmTieneEnlaceSIGDto
+        val lng: LngDto,
+        val lat: LatDto,
+        val om_tipoMonumento: OmTipoMonumentoDto,
+        val name: NameDto,
+        val om_tieneEnlaceSIG: OmTieneEnlaceSIGDto
 )
 
 data class OmTieneEnlaceSIGDto(
