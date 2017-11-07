@@ -1,10 +1,10 @@
-package com.nosmurf.monumentsapp.activity
+package com.nosmurf.monumentsapp.presentation.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.github.salomonbrys.kodein.LazyKodein
 import com.github.salomonbrys.kodein.android.appKodein
-import com.nosmurf.monumentsapp.presenter.Presenter
+import com.nosmurf.monumentsapp.presentation.presenter.Presenter
 
 abstract class RootActivity<V : Presenter.View> : AppCompatActivity(), Presenter.View {
 

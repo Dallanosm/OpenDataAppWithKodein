@@ -1,9 +1,11 @@
-package com.nosmurf.monumentsapp.presenter
+package com.nosmurf.monumentsapp.presentation.presenter
 
-class MainPresenter : Presenter<MainPresenter.View>() {
+import com.nosmurf.monumentsapp.domain.interactor.GetMonumentsUseCase
+
+class MainPresenter(private val getMonumentsUseCase: GetMonumentsUseCase) : Presenter<MainPresenter.View>() {
 
     override fun initialize() {
-        view?.showTestText("lorem ipsum")
+        getMonumentsUseCase.execute({ view?.showTestText(it.name) }, { view?.showError(it.message!!) }, Unit)
     }
 
     override fun pause() {
@@ -15,7 +17,7 @@ class MainPresenter : Presenter<MainPresenter.View>() {
     }
 
     override fun destroy() {
-
+        getMonumentsUseCase.dispose()
     }
 
     interface View : Presenter.View {

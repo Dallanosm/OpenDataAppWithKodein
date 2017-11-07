@@ -1,9 +1,9 @@
-package com.nosmurf.monumentsapp.activity
+package com.nosmurf.monumentsapp.presentation.activity
 
 import com.github.salomonbrys.kodein.instance
 import com.nosmurf.monumentsapp.R
-import com.nosmurf.monumentsapp.extensions.showToast
-import com.nosmurf.monumentsapp.presenter.MainPresenter
+import com.nosmurf.monumentsapp.presentation.extensions.showToast
+import com.nosmurf.monumentsapp.presentation.presenter.MainPresenter
 
 
 class MainActivity : RootActivity<MainPresenter.View>(), MainPresenter.View {

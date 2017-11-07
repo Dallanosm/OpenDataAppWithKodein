@@ -1,4 +1,4 @@
-package com.nosmurf.monumentsapp.extensions
+package com.nosmurf.monumentsapp.presentation.extensions
 
 import android.content.Context
 import android.widget.Toast

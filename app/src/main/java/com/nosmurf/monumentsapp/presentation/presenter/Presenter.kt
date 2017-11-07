@@ -1,4 +1,4 @@
-package com.nosmurf.monumentsapp.presenter
+package com.nosmurf.monumentsapp.presentation.presenter
 
 abstract class Presenter<V : Presenter.View> {
 
