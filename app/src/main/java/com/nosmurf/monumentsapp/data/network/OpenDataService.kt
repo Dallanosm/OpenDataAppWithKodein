@@ -2,7 +2,7 @@ package com.nosmurf.monumentsapp.data.network
 
 import com.nosmurf.monumentsapp.data.network.models.MonumentsDto
 import retrofit2.http.GET
-import rx.Single
+import rx.Observable
 
 interface OpenDataService {
 
@@ -16,6 +16,6 @@ interface OpenDataService {
             "+%3Fom_tipoMonumento.+%7D+%0D%0AOPTIONAL++%7B%3Furi+geo%3Alat+%3Fgeo_lat.+%7D%0D%0AOPTIONAL++%7B%3Furi" +
             "+om%3AtieneEnlaceSIG+%3Fom_tieneEnlaceSIG.+%7D%0D%0AOPTIONAL++%7B%3Furi+rdfs%3Alabel+%3Frdfs_label." +
             "+%7D%7D&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on")
-    fun getMonuments(): Single<MonumentsDto>
+    fun getMonuments(): Observable<MonumentsDto>
 
 }

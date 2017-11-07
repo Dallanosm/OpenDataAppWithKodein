@@ -7,24 +7,29 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-class ApiClient {
+class ApiClient private constructor() {
 
-    fun <S> createService(clazz: Class<S>, endPoint: String): S {
-        val logging = HttpLoggingInterceptor()
-        logging.level = HttpLoggingInterceptor.Level.BASIC
+    companion object {
 
-        val client = OkHttpClient.Builder()
-                .addInterceptor(logging)
-                .build()
+        @JvmStatic
+        fun <S> createService(clazz: Class<S>, endPoint: String): S {
+            val logging = HttpLoggingInterceptor()
+            logging.level = HttpLoggingInterceptor.Level.BASIC
 
-        val retrofit = Retrofit.Builder()
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(client)
-                .baseUrl(endPoint)
-                .build()
+            val client = OkHttpClient.Builder()
+                    .addInterceptor(logging)
+                    .build()
 
-        return retrofit.create(clazz)
+            val retrofit = Retrofit.Builder()
+                    .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .client(client)
+                    .baseUrl(endPoint)
+                    .build()
+
+            return retrofit.create(clazz)
+        }
+
     }
 
 }

@@ -9,10 +9,10 @@ data class MonumentsDto(
 data class ResultsDto(
         val distinct: Boolean, //false
         val ordered: Boolean, //true
-        val bindingDtos: List<BindingDto>
+        val monumentDtos: List<MonumentDto>
 )
 
-data class BindingDto(
+data class MonumentDto(
         val lngDto: LngDto,
         val latDto: LatDto,
         val om_tipoMonumentoDto: OmTipoMonumentoDto,

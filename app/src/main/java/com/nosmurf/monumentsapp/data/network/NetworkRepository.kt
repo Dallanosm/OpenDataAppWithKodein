@@ -1,10 +1,10 @@
 package com.nosmurf.monumentsapp.data.network
 
 import com.nosmurf.monumentsapp.data.network.models.MonumentsDto
-import rx.Single
+import rx.Observable
 
 interface NetworkRepository {
 
-    fun getMonuments(): Single<MonumentsDto>
+    fun getMonuments(): Observable<MonumentsDto>
 
 }
