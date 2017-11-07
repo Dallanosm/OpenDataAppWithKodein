@@ -32,6 +32,8 @@ dependencies {
     compile 'com.github.salomonbrys.kodein:kodein:4.1.0'
     compile 'com.github.salomonbrys.kodein:kodein-android:4.1.0'
 
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
     // Data layer
     compile 'io.reactivex.rxjava2:rxjava:2.1.6'
     compile 'com.google.code.gson:gson:2.8.0'
