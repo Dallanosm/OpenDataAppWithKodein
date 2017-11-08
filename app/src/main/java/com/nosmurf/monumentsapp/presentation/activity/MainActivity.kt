@@ -2,6 +2,7 @@ package com.nosmurf.monumentsapp.presentation.activity
 
 import com.github.salomonbrys.kodein.instance
 import com.nosmurf.monumentsapp.R
+import com.nosmurf.monumentsapp.domain.models.Monument
 import com.nosmurf.monumentsapp.presentation.extensions.showToast
 import com.nosmurf.monumentsapp.presentation.presenter.MainPresenter
 
@@ -28,8 +29,8 @@ class MainActivity : RootActivity<MainPresenter.View>(), MainPresenter.View {
         showToast(message)
     }
 
-    override fun showTestText(text: String) {
-        showToast(text)
+    override fun showMonument(monument: Monument) {
+        showToast(monument.type)
     }
 
 }
