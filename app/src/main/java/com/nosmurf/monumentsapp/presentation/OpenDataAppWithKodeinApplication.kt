@@ -4,10 +4,10 @@ import android.app.Application
 import com.github.salomonbrys.kodein.*
 import com.github.salomonbrys.kodein.android.autoAndroidModule
 import com.nosmurf.monumentsapp.data.DataRepository
-import com.nosmurf.monumentsapp.data.network.ApiClient
 import com.nosmurf.monumentsapp.data.network.NetworkDataRepository
 import com.nosmurf.monumentsapp.data.network.NetworkRepository
 import com.nosmurf.monumentsapp.data.network.OpenDataService
+import com.nosmurf.monumentsapp.data.network.createService
 import com.nosmurf.monumentsapp.domain.PostExecutionThread
 import com.nosmurf.monumentsapp.domain.Repository
 import com.nosmurf.monumentsapp.domain.interactor.GetMonumentsUseCase
@@ -25,7 +25,7 @@ class OpenDataAppWithKodeinApplication : Application(), KodeinAware {
         bind<GetMonumentsUseCase>() with singleton { GetMonumentsUseCase(instance(), instance()) }
 
         bind<Repository>() with singleton { DataRepository(instance()) }
-        bind<NetworkRepository>() with singleton { NetworkDataRepository(ApiClient.createService(OpenDataService::class.java, OpenDataService.END_POINT)) }
+        bind<NetworkRepository>() with singleton { NetworkDataRepository(createService(OpenDataService.END_POINT)) }
     }
 
 }
