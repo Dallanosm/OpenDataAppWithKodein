@@ -1,6 +1,6 @@
 # Cáceres Monuments App
 
-In this project, I use some new tecnologies to get info about monuments from http://opendata.caceres.es/. The project is defined in three layers: presentation, domain and data. It's development in Kotlin!
+In this project, I use some new tecnologies to get info about monuments from http://opendata.caceres.es/. The project is defined in three layers: presentation, domain and data. It's developed in Kotlin!
 
  * Presentation
  	* MVP Pattern.
